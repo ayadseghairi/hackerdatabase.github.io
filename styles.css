@@ -73,3 +73,11 @@ input:hover, button:focus {
     font-weight: bold;
     text-shadow: #3e8e41 0 0 20px;
 }
+.ayac {
+    font-weight: bold;
+    text-shadow: #3e8e41 0 0 10px;
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    left: 35%;
+}
