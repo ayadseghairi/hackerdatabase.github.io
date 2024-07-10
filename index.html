@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker database - Ayad Seghiri </title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Hacker database - Ayad Seghiri">
+    <meta name="keywords" content="Hacker database - Ayad Seghiri">
+    <meta name="author" content="Ayad Seghiri">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 id="hh1">Welcome, we will help you search the hacker database</h1>
+        <input type="text" id="searchInput" placeholder="Username or Email ">
+
+        <button onclick="search()">research</button>
+        <div id="results"></div>
+        <div id="myDiv"></div>
+    </div>
+    <script>
+        function search() {
+            const searchInput = document.getElementById('searchInput');
+            const results = document.getElementById('results');
+            const myDiv = document.getElementById('myDiv');
+            const searchValue = searchInput.value;
+
+            fetch(`https://api.proxynova.com/comb?query=${searchValue}&start=0&limit=15`)
+                .then(response => response.json())
+                .then(data => {
+                    myDiv.innerHTML = ''; 
+                    data.lines.forEach(line => {
+                        const [email, password] = line.split(':');
+                        const result = document.createElement('div');
+                        result.innerHTML = `<p>Email--> ${email} : Password--> ${password}</p>`;
+                        myDiv.appendChild(result);
+                    });
+                    myDiv.style.display = "block"; 
+                    searchInput.value = ''; // 
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        document.addEventListener('click', function(event) {
+            const myDiv = document.getElementById('myDiv');
+            const button = document.querySelector('button');
+            const searchInput = document.getElementById('searchInput');
+            if (myDiv.style.display === "block" && !myDiv.contains(event.target) && !button.contains(event.target) && !searchInput.contains(event.target)) {
+                myDiv.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
