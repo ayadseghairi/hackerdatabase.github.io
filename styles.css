@@ -9,7 +9,10 @@ body {
     margin: 0;
     background-image: url('bg.jpg');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
 
 .container {
     text-align: center;
@@ -94,7 +97,6 @@ input:hover, button:focus {
     .ayac {
         left: 10%;
         right: 10%;
-    }
 }
 @media (max-width: 480px) {
     body {
