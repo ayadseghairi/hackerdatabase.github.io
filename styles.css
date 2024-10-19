@@ -31,7 +31,6 @@ button {
     border-radius: 40px;
     cursor: pointer;
     box-shadow: #0f0 0 0 20px;
-
 }
 button:hover {
     box-shadow: #0f0 0 0 50px;
@@ -45,9 +44,7 @@ input:hover, button:focus {
     box-shadow: #0f0 0 0 20px;
 }
 
-
 #myDiv {
-    
     width: 700px;
     height: 200px;
     background-color: #0f0;
@@ -62,6 +59,7 @@ input:hover, button:focus {
     border-radius: 10px;
     top: 50%; 
     left: 20%;
+    transform: translate(-50%, -50%);
 }
 
 #myDiv p {
@@ -81,4 +79,47 @@ input:hover, button:focus {
     bottom: 10px;
     text-align: center;
     left: 35%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    input {
+        width: 80%;
+    }
+    #myDiv {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .ayac {
+        left: 10%;
+        right: 10%;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+    input, button {
+        width: 90%;
+        font-size: 14px;
+    }
+    #myDiv {
+        width: 95%;
+        height: auto;
+        padding: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #myDiv p {
+        font-size: 16px;
+    }
+    .ayac {
+        left: 5%;
+        right: 5%;
+        font-size: 14px;
+    }
+}
 }
