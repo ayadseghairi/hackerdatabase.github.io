@@ -13,8 +13,12 @@ This project is a web application that checks if passwords have been published i
 
 ## License
 
-This project is proprietary and cannot be redistributed or used without permission.
+You can republish or modify it as long as you mention us .
+
 
 ## Related Links
 
 - [Website](https://ayadseghairi.github.io/hackerdatabase.github.io/)
+
+
+## Made with love
