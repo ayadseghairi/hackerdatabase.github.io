@@ -26,7 +26,7 @@
             const myDiv = document.getElementById('myDiv');
             const searchValue = searchInput.value;
 
-            fetch(`https://api.proxynova.com/comb?query=${searchValue}&start=0&limit=15`)
+            fetch(`https://api.proxynova.com/comb?query=${searchValue}&start=0&limit=213`)
                 .then(response => response.json())
                 .then(data => {
                     myDiv.innerHTML = ''; 
